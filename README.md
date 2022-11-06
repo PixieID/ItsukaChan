@@ -1,18 +1,12 @@
-# Aine-MD
+# ItsukaBot-Md
 
-This script is free, if caught sold, this script will be deleted immediately.
-Don't forget to follow my github
-
-Script ini gratis, Jika ketahuan di jual, Script ini akan langsung di hapus.
-Jangan lupa untuk mengikuti github ku
-* My WhatsApp [`Click Here`](https://wa.me/62895330379186?text=Assalamualaikum)
-* My Facebook [`Click Here`](https://facebook.com/ainneboot)
+Script ini gratis jika ketahuan dijual maka akan di delete atau berhenti berkembang
 
 ## Viewer 👁️
-<p align="center"><img src="https://profile-counter.glitch.me/{Aiinne}/count.svg" alt="neoxr :: Visitor's Count" /></p>
+<p align="center"><img src="https://profile-counter.glitch.me/{Chandra-XD}/count.svg" alt="neoxr :: Visitor's Count" /></p>
 
 ## Heroku Buildpack
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Aiinne/Aine-MD)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Chandra-XD/ItsukaChan)
 
 | BuildPack | LINK |
 |--------|--------|
@@ -38,8 +32,8 @@ apt install git -y
 apt install nodejs -y
 apt install ffmpeg -y
 apt install imagemagick -y
-git clone https://github.com/Aiinne/Aine-MD
-cd Aine-MD
+git clone https://github.com/Chandra-XD/ItsukaChan
+cd ItsukaChan
 pkg install yarn
 yarn
 
@@ -75,8 +69,8 @@ apt install wget curl git ffmpeg imagemagick build-essential libcairo2-dev libpa
 ubuntu
 curl -fsSL https://deb.nodesource.com/setup_current.x | sudo -E bash -
 apt install -y nodejs gcc g++ make
-git clone https://github.com/Aiinne/Aine-MD
-cd Aiinne-MD
+git clone https://github.com/Chandra-XD/ItsukaChan
+cd ItsukaChan
 npm install
 npm update
 ```
@@ -91,8 +85,8 @@ npm update
 * Download And Install ImageMagick [`Click Here`](https://imagemagick.org/script/download.php)
 
 ```bash
-git clone https://github.com/Aiinne/Aine-MD
-cd Aiinne-MD
+git clone https://github.com/Chandra-XD/ItsukaChan
+cd ItsukaChan
 npm install
 npm update
 ```
@@ -226,6 +220,4 @@ Semua yang selalu mendukung
 [![Natx-C](https://github.com/Natx-C.png?size=100)](https://github.com/Natx-C)
 [![NurFy](https://github.com/NurFy.png?size=100)](https://github.com/NurFy)
 [![SudoAnirudh](https://github.com/SudoAnirudh.png?size=100)](https://github.com/SudoAnirudh)
-
-Best Regards. Aine-MD
-
+[![Chandra-XD](https://github.com/Chandra-XD.png?size=100)](https://github.com/Chandra-XD)
