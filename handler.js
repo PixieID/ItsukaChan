@@ -765,8 +765,7 @@ module.exports = {
                     if (xp > 9999999999999999999999) m.reply('Ngecit -_-') // Hehehe
                     else m.exp += xp
                     if (!isPrems && plugin.limit && db.data.users[m.sender].limit < plugin.limit * 1) {
-                     //   this.reply(m.chat, `Limit anda habis, silahkan beli melalui *${usedPrefix}buy*`, m)
-                        this.sendButton(m.chat, `Limit kamu habis, silahkan beli melalui *${usedPrefix}buyall* atau *${usedPrefix}hadiah*`, author, null, [['Buy Limit', '/buyall'], ['Hadiah', '/hadiah']], m)
+                        this.reply(m.chat, `*ID :* Limit kamu habis atau tidak mencukupi untuk menggunakan fitur ini silahkan beli limit melalui *${usedPrefix}buyall* atau kamu juga bisa membeli limit di owner\n\n*EN :* Your limit is exhausted or not sufficient to use this feature, please buy a limit via *${usedPrefix}buyall* or you can also buy a limit at the owner`, m)
                         continue // Limit habis
                     }
                     if (plugin.level > _user.level) {
@@ -891,43 +890,10 @@ module.exports = {
                             pp = await this.profilePictureUrl(user)
                         } catch (e) {
                         } finally {
-                            text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', await this.getName(id)).replace('@desc', groupMetadata.desc?.toString() || 'unknow') :
-                            (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', `${this.getName(user)}`)
-                        let wel = API('males', '/welcome2', {
-                                profile: pp,
-                                username: await this.getName(user),
-                                background: 'https://telegra.ph/file/7f827ca45c833542777f0.jpg',
-                                groupname: await this.getName(id),
-                                membercount: groupMetadata.participants.length
-                            })
-                            let lea = API('males', '/goodbye3', {
-                                profile: pp,
-                                username: await this.getName(user),
-                                background: 'https://telegra.ph/file/7f827ca45c833542777f0.jpg',
-                                groupname: await this.getName(id),
-                                membercount: groupMetadata.participants.length
-                            })
-    conn.sendButtonDoc(id, text, wm, action == 'add' ? 'ᴡᴇʟᴄᴏᴍᴇ' : 'sᴀʏᴏɴᴀʀᴀᴀ', action === 'add' ? '.intro' : 'ok', {
-key : {
- fromMe: false, 
-            participant: `0@s.whatsapp.net`, 
-            ...({ remoteJid: "status@broadcast" }) 
-        }, 
-message: {
-imageMessage: {
-viewOnce: true
-}
-}
-}, { contextInfo: { externalAdReply: { showAdAttribution: true,
-    mediaUrl: "https://youtu.be/6Dua0GTlYCc",
-    mediaType: 2, 
-    title: `last update 13 Oktober 2022`, 
-    body: `私はボットチャンドラです`, 
-    thumbnail: await(await fetch(action === 'add' ? wel : lea)).buffer(),
-    sourceUrl: 'https://youtu.be/6Dua0GTlYCc'
-     }}
-  })
-                    }
+                            text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', await this.getName(id)).replace('@desc', groupMetadata.desc.toString()) :
+                                (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', '@' + user.split('@')[0])
+                            this.sendFile(id, pp, 'pp.jpg', text, null, false, { mentions: [user] })
+                        }
                 }
             }
             break
@@ -988,22 +954,22 @@ conn.ws.on('CB:call', async function callUpdatePushToDb(json) {
     })
 
 global.dfail = (type, m, conn) => {
+    let nmsr = `Hai kak 👋 @${m.sender.replace(/@.+/, '')}`
     let msg = {
-        rowner: 'Perintah ini hanya untuk owner',
-        owner: 'Perintah ini hanya untuk owner bot',
-        mods: 'Perintah ini hanya untuk moderator bot',
-        premium: '*Premium*\n1 Bulan *Rp. 15.000*\n1 Tahun *Rp. 90.000*\n\nHubungi *owner* kami..', 
-        banned: 'Perintah ini hanya untuk pengguna yang terbanned..',
-        created: 'Perintah ini hanya pengguna yang sudah membuat base\nContoh: #createbase Itsuka',
-        group: 'Perintah ini hanya dapat digunakan di grup!',
-        private: 'Perintah ini hanya dapat digunakan di Chat Pribadi!',
-        admin: 'Perintah ini hanya untuk *Admin* grup!',
-        unreg: 'Silahkan daftar untuk menggunakan fitur ini dengan cara mengetik:\n\n*#daftar nama.umur*\n\nContoh: *#daftar Manusia.16*',
-        botAdmin: 'Jadikan bot sebagai *Admin* untuk menggunakan perintah ini!',
-        restrict: 'Fitur ini di *disable*!'
+        rowner: `${nmsr}\nPerintah ini hanya untuk owner`,
+        owner: `${nmsr}\nPerintah ini hanya untuk owner bot`,
+        mods: `${nmsr}\nPerintah ini hanya untuk moderator bot`,
+        premium: `${nmsr}\nKamu harus upgrade premium untuk dapat mengakses vitur ini\n\n*Premium*\n1 Bulan *Rp. 15.000*\n1 Tahun *Rp. 90.000*\n\nJika berminat hubungi *owner* kami..`, 
+        banned: `${nmsr}\nPerintah ini hanya untuk pengguna yang terbanned..`,
+        created: `${nmsr}\nPerintah ini hanya pengguna yang sudah membuat base\nContoh: #createbase Itsuka`,
+        group: `${nmsr}\nPerintah ini hanya dapat digunakan di grup!`,
+        private: `${nmsr}\nPerintah ini hanya dapat digunakan di Chat Pribadi!`,
+        admin: `${nmsr}\nPerintah ini hanya untuk *Admin* grup!`,
+        unreg: `${nmsr}\nSilahkan daftar untuk menggunakan fitur ini dengan cara mengetik:\n\n*#daftar nama.umur*\n\nContoh: *#daftar Manusia.16*`,
+        botAdmin: `${nmsr}\nJadikan bot sebagai *Admin* untuk menggunakan perintah ini!`,
+        restrict: `${nmsr}\nFitur ini di *disable*! ( mati )`
     }[type]
-    if (msg) return conn.reply(m.chat, msg, m, { contextInfo: { externalAdReply: { showAdAttribution: true, title: '                「 ᴡʜᴀᴛsᴀᴘᴘ ʙᴏᴛ 汉  」'
-, body: '私はボットチャンドラです', sourceUrl: "https://api.whatsapp.com/send?phone=+628882141495", thumbnail: fs.readFileSync('./media/ppbot.jpg') }}})
+    if (msg) return conn.reply(m.chat, msg, m)
 }
 
 let fs = require('fs')
