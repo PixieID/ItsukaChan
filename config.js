@@ -7,6 +7,10 @@ owner = [
   ['628882141495', 'Chandra XD', true]
   // [number, dia creator/owner?, dia developer?]
 ] // Put your number here
+
+lolkey = 'YourKey' // Registrasi atau beli di web https://api.lolhuman.xyz
+viokey = 'beta' // Ini gausah diubah udh bener
+
 mods = [] // Want some help?
 prems = [] // Premium user has unlimited limit
 APIs = { // API Prefix
@@ -15,26 +19,31 @@ APIs = { // API Prefix
   xteam: 'https://api.xteam.xyz',
   zahir: 'https://zahirr-web.herokuapp.com',
   bcil: 'https://75.119.137.248:21587',
-  neoxr: 'https://api.neoxr.eu.org/',
+  neoxr: 'https://api.neoxr.eu.org',
   zeks: 'https://api.zeks.me',
-  gimez: 'https://masgimenz.my.id/',
+  ana: 'https://anabotofc.herokuapp.com',
+  gimez: 'https://masgimenz.my.id',
   melcanz: 'https://melcanz.com',
   pencarikode: 'https://pencarikode.xyz',
   LeysCoder: 'https://leyscoders-api.herokuapp.com',
   restapi: 'https://x-restapi.herokuapp.com',
-  violetics : 'https://violetics.pw', 
+  violetics : 'https://violetics.pw',
+  lol: 'https://api.lolhuman.xyz',
   males : 'https://malesin.xyz'
 }
 APIKeys = { // APIKey Here
   // 'https://website': 'apikey'
   'https://api.xteam.xyz': 'apikeyaine',
+  'https://anabotofc.herokuapp.com': 'AnaBot',
   'https://zahirr-web.herokuapp.com': 'zahirgans',
   'https://api.neoxr.eu.org/': 'jVEMyB2ITJ',
+  'https://api.lolhuman.xyz': 'apikamu',
   'https://api.zeks.me': 'apikeyaine',
   'https://pencarikode.xyz': 'pais',
-  'https://melcanz.com': 'ZZBk7EBb',
+  'https://melcanz.com': 'melcantik',
   'https://leyscoders-api.herokuapp.com': 'dappakntlll',
   'https://x-restapi.herokuapp.com': 'BETA',
+  'https://ziy.herokuapp.com': 'xZiyy',
   'https://violetics.pw': 'beta'
 }
 
@@ -62,8 +71,9 @@ fs.watchFile(file_exif, () => {
 packname = sticker_name
 author = sticker_author
 wm = '© 𝙄𝙩𝙨𝙪𝙠𝙖𝘽𝙤𝙩-𝙈𝙙 | 𝘾𝙝𝙖𝙣𝙙𝙧𝙖 𝙓𝘿'
+jepang = '私はボットチャンドラです'
 
-Intervalmsg = 1800
+Intervalmsg = 900
 multiplier = 37
 rpg = {
   emoticon(string) {
