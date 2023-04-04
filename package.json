@@ -43,6 +43,7 @@
         "@adiwajshing/baileys": "4.4.0",
         "@adiwajshing/keyed-db": "^0.2.4",
         "@bochilteam/scraper": "^3.0.0",
+        "@xct007/frieren-scraper": "github:xct007/frieren-scraper",
         "acrcloud": "^1.4.0",
         "anonfile-lib": "^1.0.1",
         "async": "^3.2.3",
